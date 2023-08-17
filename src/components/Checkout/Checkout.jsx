@@ -10,6 +10,8 @@ function Checkout() {
         
     return(<>
         <h2>Step 3: Checkout</h2>
+        {/* will need a variable here for displaying pickup or delivery */}
+        <h3>Pickup or Delivery</h3>
 
         <table className="checkout-table">
            <thead>
