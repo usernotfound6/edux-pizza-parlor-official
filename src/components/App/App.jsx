@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
+
 // imports for components
 import Home from '../Home/Home';
 import Header from '../Header/Header';
@@ -28,15 +29,19 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+
         <Route exact path="/order">
           <PizzaList />
         </Route>
+
         <Route exact path="/form">
           <CustomerForm />
         </Route>
+
         <Route exact path="/checkout">
           <Checkout />
         </Route>
+
         <Route exact path="/admin">
           <PizzaAdmin />
         </Route>
