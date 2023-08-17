@@ -2,11 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 // imports for components
-import {Header} from '..Header/Header';
-import {PizzaList} from '..PizzaList/PizzaList';
-import {CustomerForm} from '..CustomerForm/CustomerForm';
-import {Checkout} from '..Checkout/Checkout';
-import {PizzaAdmin} from '..PizzaAdmin/PizzaAdmin';
+import {Header} from '../Header/Header';
+import {PizzaList} from '../PizzaList/PizzaList';
+import {CustomerForm} from '../CustomerForm/CustomerForm';
+import {Checkout} from '../Checkout/Checkout';
+import {PizzaAdmin} from '../PizzaAdmin/PizzaAdmin';
 
 
 function App() {
