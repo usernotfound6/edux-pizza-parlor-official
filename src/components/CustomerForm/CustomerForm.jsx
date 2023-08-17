@@ -4,9 +4,6 @@ function CustomerForm() {
 
 
 
-        <Link to="/checkout">
-            <button>Next</button>
-        </Link>
 
     return (
       <form>
@@ -49,6 +46,9 @@ function CustomerForm() {
   <label for="Delivery">Delivery</label>
   
   </div>
+       <Link to="/checkout">
+            <button>Next</button>
+       </Link>
       </form>
 
       
