@@ -1,19 +1,22 @@
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { PizzaItem } from './Pizza Item/PizzaItem';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 function PizzaList() {
 
     const dispatch = useDispatch();
 
+    const pizzaCart = useSelector(store => store.pizzaCart)
+    console.log('pizzaCart is:', pizzaCart)
+
     useEffect(() => {
         getPizzas()
     }, []);
 
 const getPizzas = () => {
-    axios.get('/pizza')
+    axios.get('/api/pizza')
     .then((response) => {
         console.log('response.data:', response.data)
         dispatch({
