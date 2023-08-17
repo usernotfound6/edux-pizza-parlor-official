@@ -1,7 +1,8 @@
 function Home() {
 
     return( <>
-        <p>Home.jsx</p>
+        <img src='images/pizza_photo.png' />
+            <p>Pizza is great.</p>
     </>)
 }
 
