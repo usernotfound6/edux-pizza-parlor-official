@@ -1,7 +1,10 @@
 function Header() {
 
     return(<>
-        <p>Header.jsx</p>
+         <header className='App-header'>
+        <h1 className='App-title'>Prime Pizza</h1>
+      </header>
+
     </>)
 }
 
