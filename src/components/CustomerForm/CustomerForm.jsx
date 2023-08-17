@@ -4,8 +4,7 @@ function CustomerForm() {
 
 
 
-        
- 
+
     return (
       <form>
         <h1>Step 2: Customer Information</h1>
