@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 // imports for components
 import Home from '../Home/Home';
@@ -17,34 +16,17 @@ function App() {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
-      </header>
-
-
-      <Home />
-      <Header />
-      <PizzaList />
-      <CustomerForm />
-      <Checkout/>
-      <PizzaAdmin />
-  
-      <img src='images/pizza_photo.png' />
-
-      <p>Pizza is great.</p>
-
+     <Header />
+      
       <Router>
         <div>
-          <ul className="nav">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-             <li>
+          <div className="nav">
+             <>
               <Link to="/order">Order Pizza</Link>
-            </li>
-          </ul>
+            </>
+          </div>
         <Route exact path="/">
-          {/* <Home /> */}
+          <Home />
         </Route>
         <Route exact path="/order">
           <PizzaList />
@@ -52,10 +34,14 @@ function App() {
         <Route exact path="/form">
           <CustomerForm />
         </Route>
-      
+        <Route exact path="/checkout">
+          <Checkout />
+        </Route>
+        <Route exact path="/admin">
+          <PizzaAdmin />
+        </Route>
         </div>
       </Router>
-  
     </div>
   );
 }
