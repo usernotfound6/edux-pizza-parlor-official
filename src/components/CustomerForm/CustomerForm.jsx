@@ -1,5 +1,13 @@
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
+
 function CustomerForm() {
 
+
+
+        <Link to="/checkout">
+            <button>Next</button>
+        </Link>
+    </>)
     return (
       <form>
         <h1>Step 2: Customer Information</h1>
@@ -45,6 +53,7 @@ function CustomerForm() {
 
       
     );
+
 }
 
 export default CustomerForm

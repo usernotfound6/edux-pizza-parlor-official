@@ -26,6 +26,13 @@ CREATE TABLE "orders" (
 	"time" TIMESTAMP DEFAULT NOW() NOT NULL
 );
 
+INSERT INTO "orders" ("customer_name", "street_address", "city", "zip", "type", "total")
+VALUES 
+('Example name 1', 'Example address 1', 'Example city 1', '11111', 'Example type 1', '11.11'),
+('Example name 2', 'Example address 2', 'Example city 2', '22222', 'Example type 2', '22.22'),
+('Example name 3', 'Example address 3', 'Example city 3', '33333', 'Example type 3', '33.33');
+
+
 CREATE TABLE "line_item" (
 	"id" SERIAL PRIMARY KEY,
 	"order_id" INT REFERENCES "orders" ON DELETE CASCADE,

@@ -1,6 +1,7 @@
 function PizzaAdmin() {
-
+    console.log('in pizza admin')
     return (<>
+
         <table>
             <thead>
                 <tr>
@@ -11,29 +12,30 @@ function PizzaAdmin() {
                 </tr>
             </thead>
 
-            {/* Table rows will be written in a component called PizzaAdminItem.jsx or something. We can use .map to get an item component for each previous order. -noel */}
-            {/* Data for order history will likely come from Database -noel */}
-            <tr>
-                <td>Example name</td>
-                <td>Example time</td>
-                <td>Example type</td>
-                <td>Example cost</td>
-            </tr>
+            <tbody>
+                {/* Table rows will be written in a component called PizzaAdminItem.jsx or something. We can use .map to get an item component for each previous order. -noel */}
+                {/* Data for order history will likely come from Database -noel */}
+                <tr>
+                    <td>Example name</td>
+                    <td>Example time</td>
+                    <td>Example type</td>
+                    <td>Example cost</td>
+                </tr>
 
-            <tr>
-                <td>Example name</td>
-                <td>Example time</td>
-                <td>Example type</td>
-                <td>Example cost</td>
-            </tr>
+                <tr>
+                    <td>Example name</td>
+                    <td>Example time</td>
+                    <td>Example type</td>
+                    <td>Example cost</td>
+                </tr>
 
-            <tr>
-                <td>Example name</td>
-                <td>Example time</td>
-                <td>Example type</td>
-                <td>Example cost</td>
-            </tr>
-           
+                <tr>
+                    <td>Example name</td>
+                    <td>Example time</td>
+                    <td>Example type</td>
+                    <td>Example cost</td>
+                </tr>
+            </tbody>
         </table>
     </>)
 }
