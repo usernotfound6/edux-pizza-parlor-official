@@ -5,7 +5,7 @@ function PizzaList() {
     
     return(<>
     {/* Header */}
-    <p>Step 1: Select Your Pizza</p>
+    <h2>Step 1: Select Your Pizza</h2>
         <br></br>
         <PizzaItem />
         <br></br>
