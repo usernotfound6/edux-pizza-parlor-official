@@ -1,0 +1,40 @@
+h2 {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.checkout-table {
+    text-align: left;
+}
+table, th, td {
+    margin: 50px 50px;
+    width: 90%;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 2em;
+  }
+  th, td {
+    padding: .5em;
+    min-width: 3.5em;
+  }
+  thead {
+    background-color:rgb(187, 210, 224);
+    color: black;
+  }
+  tbody tr:nth-child(odd){
+    background:white;
+  }
+  tbody tr:nth-child(even){
+    background:lightgrey;
+  }
+  h3 {
+    text-align: right;
+    margin-right: 50px ;
+  }
+  .button {
+    text-align: right;
+    margin-right: 50px
+    ;
+  }
