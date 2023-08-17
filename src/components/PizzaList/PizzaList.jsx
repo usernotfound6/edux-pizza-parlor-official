@@ -1,7 +1,30 @@
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { PizzaItem } from './Pizza Item/PizzaItem';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 function PizzaList() {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getPizzas()
+    }, []);
+
+const getPizzas = () => {
+    axios.get('/pizza')
+    .then((response) => {
+        console.log('response.data:', response.data)
+        dispatch({
+            type: 'SET_PIZZA_LIST',
+            payload: response.data
+        })
+    })
+    .catch((error) => {
+        console.log('error on client GET:', error)
+    })
+}
 
     return (<>
         {/* Header */}
