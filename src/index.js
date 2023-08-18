@@ -14,9 +14,17 @@ const pizzaList = (state = [], action) => {
     return state
 }
 
+const pizzaCart = (state = [{name: 'Pepperoni', cost: 12.99}, {name: 'Deluxe', cost: 13.99}], action) => {
+    if(action.type === 'SET_PIZZA_CART') {
+        return action.payload
+    }
+    return state
+}
+
 const storeInstance = createStore(
     combineReducers({
-        pizzaList
+        pizzaList,
+        pizzaCart
     })
 );
 
