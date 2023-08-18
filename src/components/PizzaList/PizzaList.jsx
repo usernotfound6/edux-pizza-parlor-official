@@ -8,8 +8,10 @@ function PizzaList() {
 
     const dispatch = useDispatch();
 
+
     const pizzaList = useSelector(store => store.pizzaList)
     console.log('pizzaList is:', pizzaList)
+
 
     useEffect(() => {
         getPizzas()
@@ -33,7 +35,14 @@ const getPizzas = () => {
         {/* Header */}
         <h2>Step 1: Select Your Pizza</h2>
         <br></br>
-        <PizzaItem />
+        <div>
+         {pizzaList.map((pizza, index) =>
+        <div key={index}>
+              <PizzaItem 
+              pizza={pizza}
+                />
+        </div>)}
+        </div>
         <br></br>
         <br></br>
         <Link to="/form">

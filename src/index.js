@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 
-
 const pizzaList = (state = [], action) => {
     if(action.type === 'SET_PIZZA_LIST') {
+        console.log('piaazList had received payload:', action.payload)
         return action.payload
     }
     return state
