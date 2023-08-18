@@ -14,9 +14,19 @@ const pizzaCart = (state = [], action) => {
     return state
 }
 
+const custInfo = (state = [], action) => {
+   
+    if(action.type === 'SET_CUST_INFO') {
+        return action.payload
+    }
+    return state
+  };
+
+
 const storeInstance = createStore(
     combineReducers({
-        pizzaCart
+        pizzaCart,
+        custInfo
     })
 );
 
