@@ -7,8 +7,9 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 
 // 
-const pizzaCart = (state = [], action) => {
+const pizzaList = (state = [], action) => {
     if(action.type === 'SET_PIZZA_LIST') {
+        console.log('piaazList had received payload:', action.payload)
         return action.payload
     }
     return state
@@ -16,7 +17,7 @@ const pizzaCart = (state = [], action) => {
 
 const storeInstance = createStore(
     combineReducers({
-        pizzaCart
+        pizzaList
     })
 );
 
