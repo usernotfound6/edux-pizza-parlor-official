@@ -1,7 +1,40 @@
-function PizzaAdmin() {
-    console.log('in pizza admin')
-    return (<>
+import axios from "axios"
 
+import { useState, useEffect } from "react"
+
+import PizzaAdminItem from "./PizzaAdminItem"
+
+function PizzaAdmin() {
+    // console.log('in pizza admin')
+
+    let [orders, setOrders] = useState([])
+
+    let getOrders = () => {
+        let orderResponse = []
+
+        axios.get('/api/order')
+        .then((response) => {
+            // console.log('client GET response in PizzaAdmin:', response.data)
+            orderResponse = response.data
+            // console.log('orders in axios request', orderResponse)
+            setOrders(orderResponse)
+        })
+        .catch((error) => {
+            console.log('error on client GET:', error)
+        }) 
+    }
+
+    useEffect( () => {
+        getOrders()
+    }, [])
+    
+    // console.log('orders are', orders)
+
+    // {orders.map( order => {
+    //     console.log(order)
+    // })}
+
+    return (<>
         <table>
             <thead>
                 <tr>
@@ -13,28 +46,9 @@ function PizzaAdmin() {
             </thead>
 
             <tbody>
-                {/* Table rows will be written in a component called PizzaAdminItem.jsx or something. We can use .map to get an item component for each previous order. -noel */}
-                {/* Data for order history will likely come from Database -noel */}
-                <tr>
-                    <td>Example name</td>
-                    <td>Example time</td>
-                    <td>Example type</td>
-                    <td>Example cost</td>
-                </tr>
-
-                <tr>
-                    <td>Example name</td>
-                    <td>Example time</td>
-                    <td>Example type</td>
-                    <td>Example cost</td>
-                </tr>
-
-                <tr>
-                    <td>Example name</td>
-                    <td>Example time</td>
-                    <td>Example type</td>
-                    <td>Example cost</td>
-                </tr>
+                {orders.map( order => (
+                    <PizzaAdminItem key={order.id} order={order} />
+                ))}
             </tbody>
         </table>
     </>)
