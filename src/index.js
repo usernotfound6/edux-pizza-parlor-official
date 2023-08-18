@@ -14,9 +14,39 @@ const pizzaCart = (state = [], action) => {
     return state
 }
 
+
+// Current order reducer
+const currentOrder = (state = [], action) => {
+
+    // sample object
+    let order = {
+        name: 'example name',
+        street_address: 'example address',
+        city: 'example city',
+        zip: 99999,
+        type: 'example type',
+        total: 0,
+        time: 'example time',
+        pizzas: [
+            {id: 1, quantity: 1},
+            {id: 2, quantity: 1},
+            {id: 3, quantity: 1},
+            {id: 4, quantity: 1},
+            {id: 5, quantity: 1},
+            {id: 6, quantity: 1},
+        ]
+    }
+
+
+    // Add customer information from PizzaForm page
+
+    return state
+}
+
 const storeInstance = createStore(
     combineReducers({
-        pizzaCart
+        pizzaCart,
+        currentOrder
     })
 );
 
