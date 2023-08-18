@@ -1,8 +1,38 @@
 import './Checkout.css'
 import { HashRouter as Router, Route, Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { useEffect } from 'react';
+
 
 function Checkout() {
-    // GET request here for customer info rendering
+
+    const dispatch = useDispatch();
+    const pizzaCart = useSelector(store => store.pizzaCart)
+    console.log('pizzaCart is:', pizzaCart)
+
+
+    useEffect(() => {
+        getPizzaOrder()
+    }, []);
+
+const getPizzaOrder = () => {
+
+        axios.get('/api/order')
+            .then((response) => {
+                console.log('getPizzaOrder GET response.data:', response.data)
+                dispatch({
+                    type: 'SET_PIZZA_ORDER',
+                    payload: response.data
+                })
+            })
+            .catch((error) => {
+                console.log('error on client GET:', error)
+            })
+        }
+    
+    
+    // useSelector here for customer info rendering
     // button functionality
         // with post request to send user info AND cart/cartTotal to database
         // should clear reducers
@@ -22,14 +52,13 @@ function Checkout() {
             </thead>
             <tbody>
                 {/* will need to map over cart here to render pizza order to table */}
-            <tr>
-                <td>example 1: Pepperoni</td>
-                <td>12.99</td>
+            {pizzaCart.map((pizza, i) => (
+                <tr key={i}>
+                <td>{pizza.name}</td>
+                <td>{pizza.cost}</td>
             </tr>
-            <tr>
-                <td>example 2: Deluxe</td>
-                <td>13.99</td>
-            </tr>
+            ))}
+           
             </tbody> 
         </table>
 

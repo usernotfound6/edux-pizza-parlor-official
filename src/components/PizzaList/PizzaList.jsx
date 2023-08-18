@@ -8,8 +8,10 @@ function PizzaList() {
 
     const dispatch = useDispatch();
 
-    const pizzaList = useSelector(store => store.pizzaList);
-    console.log(pizzaList)
+
+    const pizzaList = useSelector(store => store.pizzaList)
+    console.log('pizzaList is:', pizzaList)
+
 
     useEffect(() => {
         getPizzas()

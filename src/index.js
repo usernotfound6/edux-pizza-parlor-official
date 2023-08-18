@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 
-// 
 const pizzaList = (state = [], action) => {
     if(action.type === 'SET_PIZZA_LIST') {
         console.log('piaazList had received payload:', action.payload)
@@ -14,10 +13,26 @@ const pizzaList = (state = [], action) => {
     }
     return state
 }
+const custInfo = (state = [], action) => {
+   
+    if(action.type === 'SET_CUST_INFO') {
+        return action.payload
+    }
+    return state
+  };
+
+const pizzaCart = (state = [{name: 'Pepperoni', cost: 12.99}, {name: 'Deluxe', cost: 13.99}], action) => {
+    if(action.type === 'SET_PIZZA_CART') {
+        return action.payload
+    }
+    return state
+}
 
 const storeInstance = createStore(
     combineReducers({
-        pizzaList
+        pizzaList,
+        pizzaCart,
+        custInfo,
     })
 );
 
