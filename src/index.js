@@ -6,13 +6,20 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 
-// 
+
 const pizzaList = (state = [], action) => {
     if(action.type === 'SET_PIZZA_LIST') {
         return action.payload
     }
     return state
 }
+const custInfo = (state = [], action) => {
+   
+    if(action.type === 'SET_CUST_INFO') {
+        return action.payload
+    }
+    return state
+  };
 
 const pizzaCart = (state = [{name: 'Pepperoni', cost: 12.99}, {name: 'Deluxe', cost: 13.99}], action) => {
     if(action.type === 'SET_PIZZA_CART') {
@@ -24,7 +31,8 @@ const pizzaCart = (state = [{name: 'Pepperoni', cost: 12.99}, {name: 'Deluxe', c
 const storeInstance = createStore(
     combineReducers({
         pizzaList,
-        pizzaCart
+        pizzaCart,
+        custInfo,
     })
 );
 
